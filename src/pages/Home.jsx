@@ -138,7 +138,7 @@ export default function Home() {
       <Hero />
 
       {/* Brand Navigation Filter */}
-      <div className="bg-white border-y border-gray-100 py-6 overflow-hidden sticky top-[72px] z-30 backdrop-blur-md bg-white/80">
+      <div className="bg-white border-y border-gray-100 py-6 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex gap-8 md:gap-12 items-center overflow-x-auto no-scrollbar pb-2 md:justify-center">
             {[
