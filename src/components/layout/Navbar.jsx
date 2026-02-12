@@ -17,6 +17,9 @@ export default function Navbar() {
   const { cartCount } = useCart();
   const { user, isAdmin } = useAuth();
   const location = useLocation();
+  const isAdminPage = location.pathname.startsWith("/admin");
+
+  if (isAdminPage) return null;
 
   const navLinks = [
     { name: "Home", path: "/", icon: Home },

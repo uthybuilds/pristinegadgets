@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useToast } from "../../context/ToastContext";
 import {
   Facebook,
@@ -13,6 +13,10 @@ import logo from "../../assets/pristinegadgetlogo.jpeg";
 
 export default function Footer() {
   const { info } = useToast();
+  const location = useLocation();
+  const isAdminPage = location.pathname.startsWith("/admin");
+
+  if (isAdminPage) return null;
 
   const handleSocialClick = (platform) => {
     const socialLinks = {

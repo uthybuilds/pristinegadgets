@@ -167,7 +167,7 @@ export default function AdminDashboard() {
           </nav>
         </div>
 
-        <div className="mt-auto p-6 border-t border-gray-100">
+        <div className="mt-auto p-6 border-t border-gray-100 pb-10">
           <button
             onClick={signOut}
             className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-red-600 hover:bg-red-50 w-full transition-colors"
