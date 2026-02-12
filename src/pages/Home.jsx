@@ -157,7 +157,7 @@ export default function Home() {
                 className="text-sm md:text-base font-bold font-mono text-gray-400 hover:text-purple-600 transition-colors whitespace-nowrap relative group"
               >
                 {brand}
-                <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
               </Link>
             ))}
           </div>
