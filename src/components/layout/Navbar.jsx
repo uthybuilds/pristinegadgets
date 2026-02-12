@@ -95,8 +95,8 @@ export default function Navbar() {
       </header>
 
       {/* Mobile Bottom Tab Bar (iOS Style) */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-[100] bg-white border-t border-gray-200 pb-[env(safe-area-inset-bottom)] shadow-[0_-8px_30px_rgba(0,0,0,0.15)]">
-        <div className="flex justify-around items-center h-16 px-2">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-[100] bg-white/70 backdrop-blur-xl border-t border-gray-200/50 pb-safe shadow-[0_-10px_40px_-10px_rgba(0,0,0,0.2)]">
+        <div className="flex justify-around items-center h-16">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.path;
             return (
