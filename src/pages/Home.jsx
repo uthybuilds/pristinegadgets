@@ -137,19 +137,29 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <Hero />
 
-      {/* Brand Marquee */}
-      <div className="bg-white border-y border-gray-100 py-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 relative">
-          <div className="flex gap-12 items-center justify-center opacity-40 grayscale animate-pulse">
-            <h3 className="text-xl font-bold font-mono">APPLE</h3>
-            <h3 className="text-xl font-bold font-mono">SAMSUNG</h3>
-            <h3 className="text-xl font-bold font-mono">SONY</h3>
-            <h3 className="text-xl font-bold font-mono">GOOGLE</h3>
-            <h3 className="text-xl font-bold font-mono">DELL</h3>
-            <h3 className="text-xl font-bold font-mono hidden md:block">HP</h3>
-            <h3 className="text-xl font-bold font-mono hidden md:block">
-              BOSE
-            </h3>
+      {/* Brand Navigation Filter */}
+      <div className="bg-white border-y border-gray-100 py-6 overflow-hidden sticky top-[72px] z-30 backdrop-blur-md bg-white/80">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex gap-8 md:gap-12 items-center overflow-x-auto no-scrollbar pb-2 md:justify-center">
+            {[
+              "APPLE",
+              "SAMSUNG",
+              "SONY",
+              "GOOGLE",
+              "DELL",
+              "HP",
+              "BOSE",
+              "MICROSOFT",
+            ].map((brand) => (
+              <Link
+                key={brand}
+                to={`/shop?brand=${brand}`}
+                className="text-sm md:text-base font-bold font-mono text-gray-400 hover:text-purple-600 transition-colors whitespace-nowrap relative group"
+              >
+                {brand}
+                <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import { cn } from "../utils/helpers";
 export default function Shop() {
   const [searchParams, setSearchParams] = useSearchParams();
   const rawCategory = searchParams.get("category") || "all";
+  const activeBrand = searchParams.get("brand") || "all";
 
   const categories = [
     { id: "all", label: "All Gadgets" },
@@ -17,6 +18,17 @@ export default function Shop() {
     { id: "watches", label: "Watches" },
     { id: "audio", label: "Audio" },
     { id: "accessories", label: "Accessories" },
+  ];
+
+  const brands = [
+    "APPLE",
+    "SAMSUNG",
+    "SONY",
+    "GOOGLE",
+    "DELL",
+    "HP",
+    "BOSE",
+    "MICROSOFT",
   ];
 
   // Normalize and validate category
@@ -40,6 +52,10 @@ export default function Shop() {
         query = query.eq("category", activeCategory);
       }
 
+      if (activeBrand !== "all") {
+        query = query.ilike("brand", activeBrand);
+      }
+
       // Sort
       if (sortBy === "newest")
         query = query.order("created_at", { ascending: false });
@@ -55,7 +71,7 @@ export default function Shop() {
     };
 
     fetchProducts();
-  }, [activeCategory, sortBy]);
+  }, [activeCategory, activeBrand, sortBy]);
 
   const filteredProducts = products.filter((p) =>
     p.name.toLowerCase().includes(searchQuery.toLowerCase()),
